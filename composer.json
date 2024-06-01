@@ -1,0 +1,20 @@
+{
+  "name": "isbest-machine",
+  "description": "isbest-machine",
+  "type": "project",
+  "authors": [
+      {
+          "name": "hou_ve",
+          "email": "hou_ve@hotmail.com"
+      }
+  ],
+  "require": {},
+  "autoload": {
+      "psr-4": {
+          "MyProject\\": "src/"
+      }
+  },
+  "scripts": {
+      "test": "phpunit"
+  }
+}
