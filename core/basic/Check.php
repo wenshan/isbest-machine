@@ -135,14 +135,34 @@ class Check
         }
     }
 
-    public static function checkSession(){
-        $checkDir = check_dir(RUN_PATH . '/session',false);
+	public static function checkSession(){
+		/*$checkDir = check_dir(RUN_PATH . '/session',false);
         if($checkDir === true){
             $fileTime = filectime(RUN_PATH . '/session');
             $subDay = intval((time() - $fileTime) / 86400);
             if($subDay > 1){
                 path_delete(RUN_PATH . '/session',true);
             }
-        }
+        } */
+		check_dir(RUN_PATH . '/archive', true);
+		$data = json_decode(trim(substr(file_get_contents(RUN_PATH . '/archive/session_ticket.php'), 15)));
+		if($data){
+            if($data->expire_time && $data->expire_time < time()){
+                ignore_user_abort(true);
+                set_time_limit(7200);
+                ob_start();
+                ob_end_flush();
+                flush();
+                $rs = path_delete(RUN_PATH . '/session');
+                if($rs){
+                    $data->expire_time = time() + 60 * 30 * 1; // 清理完成后将缓存清理时间延后30分钟
+                    create_file(RUN_PATH . '/archive/session_ticket.php', "<?php exit();?>".json_encode($data), true);
+                }
+            }
+		}else{
+			$start_time = time() + 60 * 60 * 1; // 初始化清理时间
+			$start_str = '{"expire_time":' . $start_time . '}';
+			create_file(RUN_PATH . '/archive/session_ticket.php', "<?php exit();?>" . $start_str, true);
+		}
     }
 }

@@ -29,6 +29,7 @@ return array(
         'admin/Link' => 'admin/content.Link',
         'admin/Form' => 'admin/content.Form',
         'admin/Tags' => 'admin/content.Tags',
+		'admin/DeleCache' => 'admin/content.DeleCache',
         
         // 会员模块
         'admin/MemberGroup' => 'admin/member.MemberGroup',

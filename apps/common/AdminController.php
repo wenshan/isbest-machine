@@ -25,7 +25,7 @@ class AdminController extends Controller
         if ($this->checkLogin()) {
             // 权限检测
             $this->checkLevel();
-            
+            $this->not_clean_session();
             $this->getSecondMenu(); // 获取同级菜单
             $this->assign('menu_tree', session('menu_tree')); // 注入菜单树
             
@@ -52,14 +52,15 @@ class AdminController extends Controller
             if ($_GET['p'] && $this->config('app_url_type') == 3) {
                 $this->assign('pathinfo', '<input name="p" type="hidden" value="' . get('p') . '">');
             }
+			
         }
         
         // 不进行表单检验的控制器
         $nocheck = array(
             'Upgrade',
-            'ImageExt'
+            'ImageExt',
         );
-        
+
         // POST表单提交校验
         if ($_POST && ! in_array(C, $nocheck) && session('formcheck') != post('formcheck')) {
             // 检查会话目录权限问题
@@ -88,8 +89,23 @@ class AdminController extends Controller
             session('formcheck', get_uniqid());
         }
         $this->assign('formcheck', session('formcheck')); // 注入formcheck模板变量
+		
     }
-
+	private function not_clean_session()
+	{
+		check_dir(RUN_PATH . '/archive', true);
+		$data = json_decode(trim(substr(file_get_contents(RUN_PATH . '/archive/session_ticket.php'), 15)));
+		if($data){
+		if($data->expire_time){
+			$data->expire_time = time() + 60 * 60 * 3; // 后台有操作，则缓存延后3小时
+			create_file(RUN_PATH . '/archive/session_ticket.php', "<?php exit();?>".json_encode($data), true);
+		} 
+		}else{
+			$start_time = time() + 60 * 60 * 3; // 初始化清理时间
+			$start_str = '{"expire_time":' . $start_time . '}';
+			create_file(RUN_PATH . '/archive/session_ticket.php', "<?php exit();?>" . $start_str, true);
+		}
+	}
     // 后台用户登录状态检查
     private function checkLogin()
     {
@@ -131,6 +147,7 @@ class AdminController extends Controller
             '/admin/Index/ucenter', // 用户中心
             '/admin/Index/area', // 区域选择
             '/admin/Index/clearCache', // 清理缓存
+			'/admin/Index/clearOnlySysCache', // 清理系统缓存
             '/admin/Index/upload' // 上传文件
         );
         $levals = session('levels');

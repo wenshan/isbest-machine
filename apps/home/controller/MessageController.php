@@ -70,7 +70,7 @@ class MessageController extends Controller
                 }
                 $field_data = preg_replace_r('/pboot:if/i', '', $field_data);
                 if ($value->required && ! $field_data) {
-                    alert_back($value->description . 'Cannot be empty！');
+                    alert_back($value->description . '不能为空！');
                 } else {
                     $data[$value->name] = $field_data;
                     $mail_body .= $value->description . '：' . $field_data . '<br>';
@@ -100,7 +100,7 @@ class MessageController extends Controller
                     $mail_body .= '<br>来自网站 ' . get_http_url() . ' （' . date('Y-m-d H:i:s') . '）';
                     sendmail($this->config(), $this->config('message_send_to'), $mail_subject, $mail_body);
                 }
-                alert_location('Submitted successfully！', '-1', 1);
+                alert_location('提交成功！', '-1', 1);
             } else {
                 $this->log('留言提交失败！');
                 alert_back('提交失败！');

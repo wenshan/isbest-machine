@@ -8,6 +8,7 @@ use app\admin\model\content\ContentSortModel;
 use app\admin\model\content\LinkModel;
 use app\admin\model\content\SiteModel;
 use app\admin\model\content\SlideModel;
+use app\admin\model\content\LabelModel;
 use app\home\model\MemberModel;
 use core\basic\Controller;
 
@@ -20,6 +21,7 @@ class ImageExtController extends Controller
     private $memberModel;
     private $siteModel;
     private $slideModel;
+	private $LabelModel;
 
     public function __construct()
     {
@@ -30,6 +32,7 @@ class ImageExtController extends Controller
         $this->memberModel = new MemberModel();
         $this->siteModel = new SiteModel();
         $this->slideModel = new SlideModel();
+		$this->LabelModel = new LabelModel();
     }
 
     public function index()
@@ -50,10 +53,11 @@ class ImageExtController extends Controller
         $member = $this->memberModel->getImage();
         $site = $this->siteModel->getImage();
         $slide = $this->slideModel->getImage();
-        $resArr = array_merge_recursive($company, $contentSort, $content, $link, $member, $site, $slide);
+		$label = $this->LabelModel->getImage();
+        $resArr = array_merge_recursive($company, $contentSort, $content, $link, $member, $site, $slide, $label);
         array_walk_recursive($resArr, function ($key1) use (&$dataArr) {
             if (!empty($key1)) {
-                $dataArr[] = DOC_PATH . $key1;
+                $dataArr[] = DOC_PATH . SITE_DIR .$key1;
             }
             return $dataArr;
         });
@@ -121,10 +125,11 @@ class ImageExtController extends Controller
                 $member = $this->memberModel->getImage();
                 $site = $this->siteModel->getImage();
                 $slide = $this->slideModel->getImage();
-                $resArr = array_merge_recursive($company, $contentSort, $content, $link, $member, $site, $slide);
+				$Label = $this->LabelModel->getImage();
+                $resArr = array_merge_recursive($company, $contentSort, $content, $link, $member, $site, $slide, $Label);
                 array_walk_recursive($resArr, function ($key1) use (&$dataArr) {
                     if (!empty($key1)) {
-                        $dataArr[] = DOC_PATH . $key1;
+                        $dataArr[] = DOC_PATH . SITE_DIR .$key1;
                     }
                     return $dataArr;
                 });

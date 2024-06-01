@@ -108,6 +108,8 @@ class IndexController extends Controller
         // 就收数据
         $username = post('username');
         $password = post('password');
+        $checkcode = post('checkcode');
+        $formcheck = post('formcheck');
 
         if (!preg_match('/^[\x{4e00}-\x{9fa5}\w\-\.@]+$/u', $username)) {
             json(0, '用户名含有不允许的特殊字符！');
@@ -119,6 +121,14 @@ class IndexController extends Controller
 
         if (!$password) {
             json(0, '密码不能为空！');
+        }
+
+        if (!$checkcode) {
+            json(0, '验证码不能为空！');
+        }
+
+        if (!$formcheck) {
+            json(0, '表单提交校验失败,请刷新后重试！');
         }
 
         if (!!$time = $this->checkLoginBlack()) {
@@ -257,7 +267,7 @@ class IndexController extends Controller
         if (get('delall')) {
             $rs = path_delete(RUN_PATH);
         } else {
-            $rs = (path_delete(RUN_PATH . '/cache') && path_delete(RUN_PATH . '/complile') && path_delete(RUN_PATH . '/config') && path_delete(RUN_PATH . '/upgrade') && path_delete(RUN_PATH . '/image'));
+            $rs = (path_delete(RUN_PATH . '/cache') && path_delete(RUN_PATH . '/complile') && path_delete(RUN_PATH . '/config') && path_delete(RUN_PATH . '/upgrade'));
         }
         cache_config(); // 清理缓存后立即生成新的配置
         if ($rs) {
@@ -271,7 +281,28 @@ class IndexController extends Controller
             alert_back('清理缓存失败！', 0);
         }
     }
-
+	
+	// 清理系统缓存
+    public function clearOnlySysCache()
+    {
+        if (get('delall')) {
+            $rs = path_delete(RUN_PATH);
+        } else {
+            $rs = (path_delete(RUN_PATH . '/complile') && path_delete(RUN_PATH . '/config') && path_delete(RUN_PATH . '/upgrade'));
+        }
+        cache_config(); // 清理缓存后立即生成新的配置
+        if ($rs) {
+            if (extension_loaded('Zend OPcache')) {
+                opcache_reset(); // 在启用了OPcache加速器时同时清理
+            }
+            $this->log('清理缓存成功！');
+            alert_back('清理缓存成功！', 1);
+        } else {
+            $this->log('清理缓存失败！');
+            alert_back('清理缓存失败！', 0);
+        }
+    }
+	
     // 清理会话
     public function clearSession()
     {

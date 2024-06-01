@@ -16,6 +16,10 @@ class Basic
     // 实现类文件自动加载
     public static function autoLoad($className)
     {
+        //oss类跳过
+        if( strstr($className,'OSS')){
+            return;
+        }
         if (substr($className, 0, 4) == 'core') { // 框架类文件命名空间转换
             $class_file = CORE_PATH . '/' . str_replace('\\', '/', substr($className, 5)) . '.php';
         } elseif (substr($className, 0, 3) == 'app') { // 应用类文件命名空间转换
