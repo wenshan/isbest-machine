@@ -766,17 +766,17 @@ CREATE TABLE `ay_content_sort` (
 --
 
 INSERT INTO `ay_content_sort` (`id`,`acode`,`mcode`,`pcode`,`scode`,`name`,`listtpl`,`contenttpl`,`status`,`outlink`,`subname`,`ico`,`pic`,`title`,`keywords`,`description`,`filename`,`sorting`,`create_user`,`update_user`,`create_time`,`update_time`,`gtype`,`gid`,`gnote`) VALUES
-('1','cn','1','0','1','公司简介','','about.html','1','','网站建设「一站式」服务商','','','','','','aboutus','255','admin','admin','2018-04-11 17:26:11','2018-04-11 17:26:11','4','',''),
-('2','cn','2','0','2','新闻中心','newslist.html','news.html','1','','了解最新公司动态及行业资讯','','','','','','article','255','admin','admin','2018-04-11 17:26:46','2018-04-11 17:26:46','4','',''),
-('3','cn','2','2','3','公司动态','newslist.html','news.html','1','','了解最新公司动态及行业资讯','','','','','','company','255','admin','admin','2018-04-11 17:27:05','2018-04-11 17:27:05','4','',''),
-('4','cn','2','2','4','行业动态','newslist.html','news.html','1','','了解最新公司动态及行业资讯','','','','','','industry','255','admin','admin','2018-04-11 17:27:30','2018-04-11 17:27:30','4','',''),
-('5','cn','3','0','5','产品中心','productlist.html','product.html','1','','服务创造价值、存在造就未来','','','','','','product','255','admin','admin','2018-04-11 17:27:54','2018-04-11 17:27:54','4','',''),
-('6','cn','3','5','6','网站建设','productlist.html','product.html','1','','服务创造价值、存在造就未来','','','','','','website','255','admin','admin','2018-04-11 17:28:19','2018-04-11 17:28:19','4','',''),
-('7','cn','3','5','7','域名空间','productlist.html','product.html','1','','服务创造价值、存在造就未来','','','','','','domain','255','admin','admin','2018-04-11 17:28:38','2018-04-11 17:28:38','4','',''),
-('8','cn','4','0','8','服务案例','caselist.html','case.html','1','','服务创造价值、存在造就未来','','','','','','case','255','admin','admin','2018-04-11 17:29:16','2018-04-11 17:29:16','4','',''),
-('9','cn','5','0','9','招贤纳士','joblist.html','job.html','1','','诚聘优秀人士加入我们的团队','','','','','','job','255','admin','admin','2018-04-11 17:30:02','2018-04-11 17:30:02','4','',''),
-('10','cn','1','0','10','在线留言','','message.html','1','','有什么问题欢迎您随时反馈','','','','','','gbook','255','admin','admin','2018-04-11 17:30:36','2018-04-12 10:55:31','4','',''),
-('11','cn','1','0','11','联系我们','','about.html','1','','能为您服务是我们的荣幸','','','','','','contact','255','admin','admin','2018-04-11 17:31:29','2018-04-11 17:31:29','4','','');
+('1','cn','1','0','1','公司简介','','about.html','1','','Professional manufacturing service provider','','','','','','aboutus','255','admin','admin','2018-04-11 17:26:11','2018-04-11 17:26:11','4','',''),
+('2','cn','2','0','2','新闻中心','newslist.html','news.html','1','','Understand the latest company dynamics and industry information','','','','','','article','255','admin','admin','2018-04-11 17:26:46','2018-04-11 17:26:46','4','',''),
+('3','cn','2','2','3','公司动态','newslist.html','news.html','1','','Understand the latest company dynamics and industry information','','','','','','company','255','admin','admin','2018-04-11 17:27:05','2018-04-11 17:27:05','4','',''),
+('4','cn','2','2','4','行业动态','newslist.html','news.html','1','','Understand the latest company dynamics and industry information','','','','','','industry','255','admin','admin','2018-04-11 17:27:30','2018-04-11 17:27:30','4','',''),
+('5','cn','3','0','5','产品中心','productlist.html','product.html','1','','Service creates value, existence creates the future','','','','','','product','255','admin','admin','2018-04-11 17:27:54','2018-04-11 17:27:54','4','',''),
+('6','cn','3','5','6','网站建设','productlist.html','product.html','1','','Service creates value, existence creates the future','','','','','','website','255','admin','admin','2018-04-11 17:28:19','2018-04-11 17:28:19','4','',''),
+('7','cn','3','5','7','域名空间','productlist.html','product.html','1','','Service creates value, existence creates the future','','','','','','domain','255','admin','admin','2018-04-11 17:28:38','2018-04-11 17:28:38','4','',''),
+('8','cn','4','0','8','服务案例','caselist.html','case.html','1','','Service creates value, existence creates the future','','','','','','case','255','admin','admin','2018-04-11 17:29:16','2018-04-11 17:29:16','4','',''),
+('9','cn','5','0','9','招贤纳士','joblist.html','job.html','1','','We are looking for talented people to join our team','','','','','','job','255','admin','admin','2018-04-11 17:30:02','2018-04-11 17:30:02','4','',''),
+('10','cn','1','0','10','在线留言','','message.html','1','','If you have any questions, please feel free to give us feedback.','','','','','','gbook','255','admin','admin','2018-04-11 17:30:36','2018-04-12 10:55:31','4','',''),
+('11','cn','1','0','11','联系我们','','about.html','1','','It is our honor to serve you','','','','','','contact','255','admin','admin','2018-04-11 17:31:29','2018-04-11 17:31:29','4','','');
 
 -- --------------------------------------------------------
 
