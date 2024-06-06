@@ -3756,7 +3756,7 @@ class ParserController extends Controller
                     if (isset($params['notext'])) {
                         $content = str_replace($search, $params['notext'], $content);
                     } else {
-                        $content = str_replace($search, '没有了！', $content);
+                        $content = str_replace($search, 'No more！', $content);
                     }
                 }
                 break;
@@ -3778,7 +3778,7 @@ class ParserController extends Controller
                     if (isset($params['notext'])) {
                         $content = str_replace($search, $params['notext'], $content);
                     } else {
-                        $content = str_replace($search, '没有了！', $content);
+                        $content = str_replace($search, 'No more！', $content);
                     }
                 }
                 break;
@@ -3804,7 +3804,7 @@ class ParserController extends Controller
                     if (isset($params['notext'])) {
                         $content = str_replace($search, $params['notext'], $content);
                     } else {
-                        $content = str_replace($search, '没有了！', $content);
+                        $content = str_replace($search, 'No more！', $content);
                     }
                 }
                 break;
@@ -3826,7 +3826,7 @@ class ParserController extends Controller
                     if (isset($params['notext'])) {
                         $content = str_replace($search, $params['notext'], $content);
                     } else {
-                        $content = str_replace($search, '没有了！', $content);
+                        $content = str_replace($search, 'No more！', $content);
                     }
                 }
                 break;
