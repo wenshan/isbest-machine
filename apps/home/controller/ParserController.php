@@ -2166,7 +2166,7 @@ class ParserController extends Controller
                                 if ($value->nickname) {
                                     $one_html = str_replace($matches2[0][$j], $this->adjustLabelData($params, $value->nickname), $one_html);
                                 } elseif (!$value->username) {
-                                    $one_html = str_replace($matches2[0][$j], $this->adjustLabelData($params, "匿名用户"), $one_html);
+                                    $one_html = str_replace($matches2[0][$j], $this->adjustLabelData($params, "Anonymous User"), $one_html);
                                 }
                                 break;
                             default:
