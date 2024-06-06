@@ -265,7 +265,7 @@ class Paging
         if (! $this->pageCount)
             return "<span class='page-none' style='color:#999'>未查询到任何数据!</span>";
         $string = "<span class='page-status'>{$this->pageStatus()}</span>";
-        $string .= "<span class='page-index'><a href='" . $this->pageIndex() . "'>首页</a></span>";
+        $string .= "<span class='page-index'><a href='" . $this->pageIndex() . "'>Home</a></span>";
         $string .= "<span class='page-pre'><a href='" . $this->pagePre() . "'>前一页</a></span>";
         $string .= "<span class='page-numbar'>{$this->pageNumBar()}</span>";
         $string .= "<span class='page-next'><a href='" . $this->pageNext() . "'>后一页</a></span>";
