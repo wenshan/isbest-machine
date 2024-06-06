@@ -27,42 +27,6 @@
         <button type="submit" class="btn btn-info mb-2">Submit comments</button>
       </div>
     </form>
-
-
-    <h4>评论记录：</h4>
-    <a name="comment"></a>
-    {pboot:comment contentid={content:id} num=20}
-    <div class="media border-bottom pb-3 pt-3">
-      <img class="mr-3" src="[comment:headpic]" height="25">
-      <div class="media-body">
-        <h6 class="mt-0">
-          <strong>[comment:nickname]</strong>
-          <small style="color:#999">[comment:date]</small>
-        </h6>
-        <p>[comment:comment]
-          <span class="badge badge-light text-secondary font-weight-normal replybtn"
-            data-action="[comment:replyaction]">reply</span>
-        </p>
-
-        {pboot:commentsub} <!-- 调用子评论 -->
-        <div class="media mt-3 border-top-dashed pt-3">
-          <img class="mr-3" src="[commentsub:headpic]" height="25">
-          <div class="media-body">
-            <h6 class="mt-0"><strong>[commentsub:nickname]</strong> <small style="color:#999">[commentsub:date]</small>
-            </h6>
-            <p>
-              @[commentsub:pnickname] [commentsub:comment]
-              <span class="badge badge-light text-secondary font-weight-normal replybtn"
-                data-action="[commentsub:replyaction]">reply</span>
-            </p>
-          </div>
-        </div>
-        {/pboot:commentsub}
-
-      </div>
-    </div>
-    {/pboot:comment}
-
     <!-- 分页 -->
     {pboot:2if({page:rows}>0)}
     <nav aria-label="page navigation" class="my-4">
