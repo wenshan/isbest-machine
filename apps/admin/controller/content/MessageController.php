@@ -31,7 +31,7 @@ class MessageController extends Controller
             $this->assign('messages', $this->model->getList(false));
             header("Content-Type:application/vnd.ms-excel");
             header('Cache-Control: max-age=0');
-            header("Content-Disposition:filename=留言记录-" . date("YmdHis") . ".xls");
+            header("Content-Disposition:filename=Message Record-" . date("YmdHis") . ".xls");
             $this->display('content/exmessage.html');
         } else {
             $this->assign('messages', $this->model->getList(true));

@@ -574,7 +574,7 @@ class ParserController extends Controller
                 if ($indexicon) {
                     $indextext = '<i class="' . $indexicon . '"></i>';
                 } elseif (!$indextext) {
-                    $indextext = '首页';
+                    $indextext = 'Home';
                 }
 
                 $out_html = '<a href="' . SITE_INDEX_DIR . '/">' . $indextext . '</a>';
