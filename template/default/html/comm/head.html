@@ -14,8 +14,15 @@
   <link rel="stylesheet" href="{pboot:sitetplpath}/css/animate.css">
   <link rel="stylesheet" href="{pboot:sitetplpath}/css/custom.css">
   <link rel="shortcut icon" href="{pboot:sitepath}/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+  <link rel="stylesheet" href="{pboot:sitetplpath}/css/style.css">
+  <link rel="stylesheet" href="{pboot:sitetplpath}/css/ionicons.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
   <script src="{pboot:sitetplpath}/js/jquery-1.12.4.min.js"></script>
-  <script src="{pboot:sitetplpath}/megamenu-js/js/megamenu.js"></script>
+  <script src="{pboot:sitetplpath}/megamenu-js/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script>
+    window.Modernizr || document.write('<script src="{pboot:sitetplpath}/megamenu-js/js/vendor/modernizr-2.8.3.min.js"><\/script>')
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TCJ87QVG4"></script>
   <script>
@@ -30,7 +37,7 @@
 
   <!-- 头部导航 -->
   <nav class="navbar navbar-light bg-light fixed-top navbar-expand-lg shadow-sm">
-    <div class="container">
+    <div class="container menu-container">
       <a class="navbar-brand my-1" href="{pboot:sitepath}/">
         <img src="{pboot:sitelogo}" class="logo-sm-height" height="50">
       </a>
@@ -40,7 +47,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end menu" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item {pboot:if(0=='{sort:scode}')}active{/pboot:if}">
             <a class="nav-link" href="{pboot:sitepath}/">Home</a>
@@ -48,12 +55,20 @@
           {pboot:nav num=10 parent=0}
           <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}">
             <a class="nav-link" href="[nav:link]">[nav:name]</a>
-            {pboot:2nav parent=[nav:scode]}
-            <a href="[2nav:link]">[2nav:name]</a>
-            {pboot:3nav parent=[2nav:scode]}
-            <a href="[3nav:link]">[3nav:name]</a>
-            {/pboot:3nav}
-            {/pboot:2nav}
+            <ul>
+              {pboot:2nav parent=[nav:scode]}
+              <li>
+                <a href="[2nav:link]">[2nav:name]</a>
+                <ul>
+                  {pboot:3nav parent=[2nav:scode]}
+                  <li>
+                    <a href="[3nav:link]">[3nav:name]</a>
+                  </li>
+                  {/pboot:3nav}
+                </ul>
+              </li>
+              {/pboot:2nav}
+            </ul>
           </li>
           {/pboot:nav}
         </ul>
