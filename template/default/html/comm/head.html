@@ -15,6 +15,15 @@
   <link rel="stylesheet" href="{pboot:sitetplpath}/css/custom.css">
   <link rel="shortcut icon" href="{pboot:sitepath}/favicon.ico" type="image/x-icon">
   <script src="{pboot:sitetplpath}/js/jquery-1.12.4.min.js"></script>
+  <script src="{pboot:sitetplpath}/megamenu-js/js/megamenu.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TCJ87QVG4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8TCJ87QVG4');
+  </script>
 </head>
 
 <body>
@@ -39,6 +48,12 @@
           {pboot:nav num=10 parent=0}
           <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}">
             <a class="nav-link" href="[nav:link]">[nav:name]</a>
+            {pboot:2nav parent=[nav:scode]}
+            <a href="[2nav:link]">[2nav:name]</a>
+            {pboot:3nav parent=[2nav:scode]}
+            <a href="[3nav:link]">[3nav:name]</a>
+            {/pboot:3nav}
+            {/pboot:2nav}
           </li>
           {/pboot:nav}
         </ul>
