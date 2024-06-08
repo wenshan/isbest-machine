@@ -191,7 +191,7 @@ function dir_copy($src, $des, $son = 1)
 // 判断文件是否是图片
 function is_image($path)
 {
-    $types = '.gif|.jpeg|.png|.bmp'; // 定义检查的图片类型
+    $types = '.gif|.jpeg|.png|.bmp|.webp'; // 定义检查的图片类型
     if (file_exists($path)) {
         $info = getimagesize($path);
         $ext = image_type_to_extension($info['2']);
