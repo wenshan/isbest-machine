@@ -305,7 +305,8 @@ function handle_upload($file, $temp, $array_ext_allow, $max_width, $max_height, 
         'png',
         'jpg',
         'gif',
-        'bmp'
+        'bmp',
+        'webp'
     );
     $file = array(
         'ppt',
