@@ -27,6 +27,9 @@ UE.I18N['zh-cn'] = {
         'touppercase':'字母大写', 'tolowercase':'字母小写','background':'背景','template':'模板','scrawl':'涂鸦',
         'inserttable':'插入表格',
     },
+    'autosave': {
+        'autoRestoreTip': '已自动从草稿箱恢复'
+    },
     'insertorderedlist':{
         'num':'1,2,3...',
         'num1':'1),2),3)...',
@@ -49,16 +52,17 @@ UE.I18N['zh-cn'] = {
     },
     'paragraph':{'p':'段落', 'h1':'标题 1', 'h2':'标题 2', 'h3':'标题 3', 'h4':'标题 4', 'h5':'标题 5', 'h6':'标题 6'},
     'fontfamily':{
+        'default':'默认',
         'songti':'宋体',
         'kaiti':'楷体',
         'heiti':'黑体',
         'lishu':'隶书',
         'yahei':'微软雅黑',
-        'andaleMono':'andale mono',
+        // 'andaleMono':'andale mono',
         'arial': 'arial',
-        'arialBlack':'arial black',
-        'comicSansMs':'comic sans ms',
-        'impact':'impact',
+        // 'arialBlack':'arial black',
+        // 'comicSansMs':'comic sans ms',
+        // 'impact':'impact',
         'timesNewRoman':'times new roman'
     },
     'customstyle':{
@@ -363,7 +367,7 @@ UE.I18N['zh-cn'] = {
         'numError':"请输入正确的数值，如123,400",
         'floatLeft':"左浮动",
         'floatRight':"右浮动",
-        '"default"':"默认",
+        'default':"默认",
         'block':"独占一行",
         'urlError':"输入的视频地址有误，请检查后再试！",
         'loading':" &nbsp;视频加载中，请等待……",
@@ -590,8 +594,4 @@ UE.I18N['zh-cn'] = {
         'copySuccess':"图片地址已经复制！",
         'flashI18n':{} //留空默认中文
     },
-    'autosave': {
-        'saving':'保存中...',
-        'success':'本地保存成功'
-    }
 };

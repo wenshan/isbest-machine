@@ -29,7 +29,7 @@ return array(
     'tpl_html_cache_time' => 900,
     
     // URL允许的特殊字符，正则模型或直接写 ,如：\*
-    'url_allow_char' => '',
+    'url_allow_char' => '+',
     
     // 前台URL分隔符
     'url_break_char' => '_',

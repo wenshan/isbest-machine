@@ -212,7 +212,7 @@ class ParserModel extends Model
         }
     }
 
-    // 分类子类集
+/*     // 分类子类集
     private function getSubScodes($scode)
     {
         if (! $scode) {
@@ -226,8 +226,46 @@ class ParserModel extends Model
             }
         }
         return $this->scodes;
+    } */
+	// 分类子类集
+    public function getSubScodes($scode)
+    {
+        if (! $scode) {
+            return;
+        }
+        $this->scodes[] = $scode;
+        $subs = parent::table('ay_content_sort')->where("pcode='$scode'")
+            ->where("outlink=''")
+            ->column('scode');
+        if ($subs) {
+            foreach ($subs as $value) {
+                $this->getSubScodes($value);
+            }
+        }
+        return $this->scodes;
     }
-
+	// 清除静态缓存时，获取全部栏目编码
+    public function getScodes($type)
+    {
+        $join = array(
+            'ay_model b',
+            'a.mcode=b.mcode',
+            'LEFT'
+        );
+        // 不包括外链
+        return parent::table('ay_content_sort a')->join($join)
+            ->in('b.type', $type)
+            ->where("outlink=''")
+            ->column('scode');
+    }
+	// 生成静态时，获取栏目全部内容ID
+    public function getContentIds($scodes, $where = array())
+    {
+        return parent::table('ay_content')->in('scode', $scodes)
+            ->where("outlink=''")
+            ->where($where)
+            ->column('id');
+    }
     // 获取栏目清单
     private function getSortList()
     {
@@ -260,8 +298,8 @@ class ParserModel extends Model
         return parent::table('ay_extfield')->where("name='$field'")->value('value');
     }
 
-    // 列表内容,带分页，不区分语言，兼容跨语言
-    public function getLists($scode, $num, $order, $filter = array(), $tags = array(), $select = array(), $fuzzy = true, $start = 1, $lfield = null, $lg = null)
+    // 列表内容，分页以參數形式帶入，不区分语言，兼容跨语言
+    public function getList($scode, $num, $order, $filter = array(), $tags = array(), $select = array(), $fuzzy = true, $start = 1, $lfield = null, $lg = null, bool $page = false)
     {
         $scode = escape_string($scode);
         $ext_table = false;
@@ -292,7 +330,22 @@ class ParserModel extends Model
         } else {
             $ext_table = true;
             $fields = array(
-                'a.*',
+                'a.id',
+                'a.scode',
+                'a.subscode',
+                'a.title',
+                'a.filename',
+                'a.outlink',
+                'a.date',
+                'a.ico',
+                'a.pics',
+                'a.content',
+                'a.enclosure',
+                'a.keywords',
+                'a.description',
+                'a.istop',
+                'a.isrecommend',
+                'a.isheadline',
                 'b.name as sortname',
                 'b.filename as sortfilename',
                 'c.name as subsortname',
@@ -304,19 +357,37 @@ class ParserModel extends Model
                 'f.gcode'
             );
         }
+
+        $contentSortIndex = '';
+        $modelIndex = '';
+        $contentExtIndex = '';
+
+        if (get_db_type() == 'mysql') {
+            $contentSortIndex = 'FORCE INDEX ( `ay_content_sort_scode` ) ';
+            $modelIndex = 'FORCE INDEX ( `ay_model_mcode` )';
+            $contentExtIndex = 'FORCE INDEX ( `ay_content_ext_contentid` )';
+        }else if(get_db_type() == 'sqlite') {
+            $contentSortIndex = 'INDEXED BY `ay_content_sort_scode` ';
+            $modelIndex = 'INDEXED BY  `ay_model_mcode` ';
+            $contentExtIndex = 'INDEXED BY  `ay_content_ext_contentid` ';
+        }
+
         $join = array(
             array(
-                'ay_content_sort b',
+//                'ay_content_sort b ',
+                'ay_content_sort b '.$contentSortIndex,
                 'a.scode=b.scode',
                 'LEFT'
             ),
             array(
-                'ay_content_sort c',
+//                'ay_content_sort c',
+                'ay_content_sort c '.$contentSortIndex,
                 'a.subscode=c.scode',
                 'LEFT'
             ),
             array(
-                'ay_model d',
+//                'ay_model d',
+                'ay_model d '.$modelIndex,
                 'b.mcode=d.mcode',
                 'LEFT'
             ),
@@ -330,7 +401,8 @@ class ParserModel extends Model
         // 加载扩展字段表
         if ($ext_table) {
             $join[] = array(
-                'ay_content_ext e',
+//                'ay_content_ext e',
+                'ay_content_ext e '.$contentExtIndex,
                 'a.id=e.contentid',
                 'LEFT'
             );
@@ -374,144 +446,32 @@ class ParserModel extends Model
         }
 
         // 筛选条件支持模糊匹配
-        return parent::table('ay_content a ' . $indexSql)->field($fields)
-            ->where($scode_arr, 'OR')
-            ->where($where)
-            ->where($select, 'AND', 'AND', $fuzzy)
-            ->where($filter, 'OR')
-            ->where($tags, 'OR')
-            ->join($join)
-            ->order($order)
-            ->page(1, $num, $start)
-            ->decode()
-            ->select();
-    }
-
-    // 列表内容，不带分页，不区分语言，兼容跨语言
-    public function getList($scode, $num, $order, $filter = array(), $tags = array(), $select = array(), $fuzzy = true, $start = 1, $lfield = null, $lg = null)
-    {
-        $scode = escape_string($scode);
-        $ext_table = false;
-        if ($lfield) {
-            $lfield .= ',id,outlink,type,scode,sortfilename,filename,urlname'; // 附加必须字段
-            $fields = explode(',', $lfield);
-            $fields = array_unique($fields); // 去重
-            foreach ($fields as $key => $value) {
-                if (strpos($value, 'ext_') === 0) {
-                    $ext_table = true;
-                    $fields[$key] = 'e.' . $value;
-                } elseif ($value == 'sortname') {
-                    $fields[$key] = 'b.name as sortname';
-                } elseif ($value == 'sortfilename') {
-                    $fields[$key] = 'b.filename as sortfilename';
-                } elseif ($value == 'subsortname') {
-                    $fields[$key] = 'c.name as subsortname';
-                } elseif ($value == 'subfilename') {
-                    $fields[$key] = 'c.filename as subfilename';
-                } elseif ($value == 'type' || $value == 'urlname') {
-                    $fields[$key] = 'd.' . $value;
-                } elseif ($value == 'modelname') {
-                    $fields[$key] = 'd.name as modelname';
-                } else {
-                    $fields[$key] = 'a.' . $value;
-                }
-            }
-        } else {
-            $ext_table = true;
-            $fields = array(
-                'a.*',
-                'b.name as sortname',
-                'b.filename as sortfilename',
-                'c.name as subsortname',
-                'c.filename as subfilename',
-                'd.type',
-                'd.name as modelname',
-                'd.urlname',
-                'e.*',
-                'f.gcode'
-            );
-        }
-        $join = array(
-            array(
-                'ay_content_sort b',
-                'a.scode=b.scode',
-                'LEFT'
-            ),
-            array(
-                'ay_content_sort c',
-                'a.subscode=c.scode',
-                'LEFT'
-            ),
-            array(
-                'ay_model d',
-                'b.mcode=d.mcode',
-                'LEFT'
-            ),
-            array(
-                'ay_member_group f',
-                'a.gid=f.id',
-                'LEFT'
-            )
-        );
-
-        // 加载扩展字段表
-        if ($ext_table) {
-            $join[] = array(
-                'ay_content_ext e',
-                'a.id=e.contentid',
-                'LEFT'
-            );
+        if($page){
+            return parent::table('ay_content a ' . $indexSql)->field($fields)
+                ->where($scode_arr, 'OR')
+                ->where($where)
+                ->where($select, 'AND', 'AND', $fuzzy)
+                ->where($filter, 'OR')
+                ->where($tags, 'OR')
+                ->join($join)
+                ->order($order)
+                ->page(1, $num, $start)
+                ->decode()
+                ->select();
+        }else{
+            return parent::table('ay_content a ' . $indexSql)->field($fields)
+                ->where($scode_arr, 'OR')
+                ->where($where)
+                ->where($select, 'AND', 'AND', $fuzzy)
+                ->where($filter, 'OR')
+                ->where($tags, 'OR')
+                ->join($join)
+                ->order($order)
+                ->limit($start - 1, $num)
+                ->decode()
+                ->select();
         }
 
-        $scode_arr = array();
-        if ($scode) {
-            // 获取所有子类分类编码
-            $this->scodes = array(); // 先清空
-            $arr = explode(',', $scode); // 传递有多个分类时进行遍历
-            foreach ($arr as $value) {
-                $scodes = $this->getSubScodes(trim($value));
-            }
-            // 拼接条件
-            $scode_arr = array(
-                "a.scode in (" . implode_quot(',', $scodes) . ")",
-                "a.subscode='$scode'"
-            );
-        }
-
-        $where = array(
-            'a.status=1',
-            'd.type=2',
-            "a.date<'" . date('Y-m-d H:i:s') . "'"
-        );
-
-        if ($lg) {
-            $where['a.acode'] = $lg;
-        }
-
-        $indexSql = '';
-        //todo:V3.1.5判断mysql是否设置了索引
-        if (get_db_type() == 'mysql') {
-            $checkIndex = parent::table('ay_content')->checkIndexSql();
-            foreach ($checkIndex as $item){
-                if($item[2] == 'ay_content_unique'){
-                    $indexSql = 'FORCE INDEX ( ay_content_unique )';
-                    break;
-                }
-            }
-        }
-
-        // 筛选条件支持模糊匹配
-        return parent::table('ay_content a ' . $indexSql)->field($fields)
-            ->where($scode_arr, 'OR')
-            ->where($where)
-            ->where($select, 'AND', 'AND', $fuzzy)
-            ->where($filter, 'OR')
-            ->where($tags, 'OR')
-            ->join($join)
-            ->order($order)
-            ->limit($start - 1, $num)
-            ->decode()
-            ->select();
     }
 
     // 内容详情，不区分语言，兼容跨语言

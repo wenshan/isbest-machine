@@ -6,6 +6,7 @@
  * @date 2018年03月23日
  * 自定义标签模型类
  */
+
 namespace app\admin\model\content;
 
 use core\basic\Model;
@@ -65,6 +66,24 @@ class LabelModel extends Model
     public function getValue()
     {
         return parent::table('ay_label')->column('value', 'name');
+    }
+
+    //获取标签图片
+    public function getImage()
+    {
+
+        $resArr = parent::table('ay_label')->column('value');
+        $setArr = [];
+        foreach ($resArr as $key => $content) {
+            $pattern = '/src=&quot;\/(.*?)&quot;/';
+            preg_match_all($pattern, $content, $matches);
+            if (!empty($matches[1])) {
+                unset($resArr[$key]);
+                $setArr = $matches[1];
+            }
+        }
+        return array_merge($resArr, $setArr);
+
     }
 }
 

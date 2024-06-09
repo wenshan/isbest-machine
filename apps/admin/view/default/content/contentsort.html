@@ -215,11 +215,11 @@
 			                     	<input type="text" name="subname" placeholder="请输入栏目副名称" class="layui-input">
 			                     </div>
 			                </div>
-
+			                
 			                <div class="layui-form-item">
 			                     <label class="layui-form-label">栏目描述1</label>
 			                     <div class="layui-input-block">
-	                             <script type="text/plain" id="editor" name="def1" style="width:100%;height:140px;"></script>
+			                     	<input type="text" name="def1"  placeholder="请输入栏目描述1内容"  class="layui-input">
 			                     </div>
 			                </div>
 			                
@@ -514,14 +514,14 @@
 				    	<div class="layui-form-item">
 		                     <label class="layui-form-label">栏目副名称</label>
 		                     <div class="layui-input-block">
-								<input type="text" name="subname" value="{$sort->subname}" placeholder="请输入栏目副名称"  class="layui-input">
+		                     	<input type="text" name="subname" value="{$sort->subname}" placeholder="请输入栏目副名称" class="layui-input">
 		                     </div>
 		                </div>
 		                
 		                 <div class="layui-form-item">
 		                     <label class="layui-form-label">栏目描述1</label>
 		                     <div class="layui-input-block">
-		                     <script type="text/plain" id="editor" name="def1" style="width:100%;height:140px;">{fun=decode_string([$sort->def1])}</script>
+		                     	<input type="text" name="def1"  value="{$sort->def1}"  placeholder="请输入栏目描述1内容"  class="layui-input">
 		                     </div>
 		                </div>
 		                
@@ -613,4 +613,3 @@
 </div>
 
 {include file='common/foot.html'}
-{include file='common/ueditor.html'}

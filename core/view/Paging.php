@@ -167,9 +167,9 @@ class Paging
                 
                 if ($url_rule_type == 1 || $url_rule_type == 2) {
                     if (defined('CMS_PAGE_CUSTOM')) { // 去分页参数
-                        $prepath = preg_replace('/(.*)' . $url_break_char . '[0-9]+$/', '$1', str_replace('/index.php','',rtrim($this->getPreUrl(), '/')));
+                        $prepath = preg_replace('/(.*)' . $url_break_char . '[0-9]+$/', '$1', rtrim($this->getPreUrl(), '/'));
                     } else {
-                        $prepath = preg_replace('/(.*)(' . $url_break_char . '[0-9]+)' . $url_break_char . '[0-9]+$/', '$1$2', str_replace('/index.php','',rtrim($this->getPreUrl(), '/')));
+                        $prepath = preg_replace('/(.*)(' . $url_break_char . '[0-9]+)' . $url_break_char . '[0-9]+$/', '$1$2', rtrim($this->getPreUrl(), '/'));
                     }
                     if ($prepath) { // 非首页分页
                         if ($page == 1) { // 第一页处理
@@ -265,7 +265,7 @@ class Paging
         if (! $this->pageCount)
             return "<span class='page-none' style='color:#999'>未查询到任何数据!</span>";
         $string = "<span class='page-status'>{$this->pageStatus()}</span>";
-        $string .= "<span class='page-index'><a href='" . $this->pageIndex() . "'>首页</a></span>";
+        $string .= "<span class='page-index'><a href='" . $this->pageIndex() . "'>Home</a></span>";
         $string .= "<span class='page-pre'><a href='" . $this->pagePre() . "'>前一页</a></span>";
         $string .= "<span class='page-numbar'>{$this->pageNumBar()}</span>";
         $string .= "<span class='page-next'><a href='" . $this->pageNext() . "'>后一页</a></span>";
@@ -349,25 +349,25 @@ class Paging
                 if ($i > $this->pageCount)
                     break;
                 if ($this->page == $i) {
-                    $num_html .= '<li><a href="' . $this->buildPath($i) . '" class="page-num page-num-current page-numbers current">' . $i . '</a></li>';
+                    $num_html .= '<a href="' . $this->buildPath($i) . '" class="page-num page-num-current">' . $i . '</a>';
                 } else {
-                    $num_html .= '<li><a href="' . $this->buildPath($i) . '" class="page-num page-numbers">' . $i . '</a></li>';
+                    $num_html .= '<a href="' . $this->buildPath($i) . '" class="page-num">' . $i . '</a>';
                 }
             }
         } elseif ($this->page + $halfl >= $this->pageCount) { // 当前页为倒数页以内
             for ($i = $this->pageCount - $total + 1; $i <= $this->pageCount; $i ++) {
                 if ($this->page == $i) {
-                    $num_html .= '<li><a href="' . $this->buildPath($i) . '" class="page-num page-num-current page-numbers current">' . $i . '</a></li>';
+                    $num_html .= '<a href="' . $this->buildPath($i) . '" class="page-num page-num-current">' . $i . '</a>';
                 } else {
-                    $num_html .= '<li><a href="' . $this->buildPath($i) . '" class="page-num page-numbers">' . $i . '</a></li>';
+                    $num_html .= '<a href="' . $this->buildPath($i) . '" class="page-num">' . $i . '</a>';
                 }
             }
         } else { // 正常的前后各5页
             for ($i = $this->page - $halfl; $i <= $this->page + $halfl; $i ++) {
                 if ($this->page == $i) {
-                    $num_html .= '<li><a href="' . $this->buildPath($i) . '" class="page-num page-num-current page-numbers current">' . $i . '</a></li>';
+                    $num_html .= '<a href="' . $this->buildPath($i) . '" class="page-num page-num-current">' . $i . '</a>';
                 } else {
-                    $num_html .= '<li><a href="' . $this->buildPath($i) . '" class="page-num page-numbers">' . $i . '</a></li>';
+                    $num_html .= '<a href="' . $this->buildPath($i) . '" class="page-num">' . $i . '</a>';
                 }
             }
         }

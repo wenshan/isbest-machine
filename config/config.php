@@ -2,13 +2,13 @@
 return array(
     
     // 定义CMS名称
-    'cmsname' => 'PbootCMS',
+    'cmsname' => 'isbest-machine',
     
     // 模板内容输出缓存开关
-    'tpl_html_cache' => 0,
+    'tpl_html_cache' => 1,
     
     // 模板内容缓存有效时间（秒）
-    'tpl_html_cache_time' => 900,
+    'tpl_html_cache_time' => 900000000000,
     
     // 会话文件使用网站路径
     'session_in_sitepath' => 1,
@@ -26,7 +26,7 @@ return array(
     
     // 上传配置
     'upload' => array(
-        'format' => 'jpg,jpeg,png,gif,xls,xlsx,doc,docx,ppt,pptx,rar,zip,pdf,txt,mp4,avi,flv,rmvb,mp3,otf,ttf',
+        'format' => 'jpg,jpeg,png,gif,webp,bmp,xls,xlsx,doc,docx,ppt,pptx,rar,zip,pdf,txt,mp4,avi,flv,rmvb,mp3,otf,ttf',
         'max_width' => '1920',
         'max_height' => ''
     ),
