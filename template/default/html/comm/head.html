@@ -53,15 +53,15 @@
             <a class="nav-link" href="{pboot:sitepath}/">Home</a>
           </li>
           {pboot:nav num=10 parent=0}
-          <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}">
+          <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[nav:scode]">
             <a class="nav-link" href="[nav:link]">[nav:name]</a>
-            <ul>
+            <ul key="[nav:scode]">
               {pboot:2nav parent=[nav:scode]}
-              <li>
+              <li key="[2nav:scode]">
                 <a href="[2nav:link]">[2nav:name]</a>
                 <ul>
                   {pboot:3nav parent=[2nav:scode]}
-                  <li>
+                  <li key="[3nav:scode]">
                     <a href="[3nav:link]">[3nav:name]</a>
                   </li>
                   {/pboot:3nav}
