@@ -9,46 +9,6 @@
   <h5 class="border-bottom border-info pb-2"><i class="fa fa-sliders" aria-hidden="true"></i> Message Record</h5>
   {/pboot:if}
 
-  <!-- 留言记录 -->
-  {pboot:message num=2}
-  <div class="media border-bottom pb-3 pt-3">
-    <img class="mr-3" src="[message:headpic]" height="25">
-    <div class="media-body">
-      <h5 class="mt-0">[message:nickname]：</h5>
-      <p>[message:content]</p>
-      <p>
-        <span class="badge badge-light text-secondary font-weight-normal">[message:os]</span>
-        <span class="badge badge-light text-secondary font-weight-normal">[message:bs]</span>
-        <span class="badge badge-light text-secondary font-weight-normal">[message:askdate]</span>
-      </p>
-
-      {pboot:if('[message:recontent]'!='')}
-      <div class="media mt-3 border-top-dashed pt-3">
-        <img class="mr-3" src="{pboot:sitetplpath}/images/user.png" height="25">
-        <div class="media-body">
-          <h5 class="mt-0">Administrator reply：</h5>
-          <p>[message:recontent]</p>
-          <p><span class="badge badge-light text-secondary font-weight-normal">[message:replydate]</span></p>
-        </div>
-      </div>
-      {/pboot:if}
-    </div>
-  </div>
-  {/pboot:message}
-
-  <!-- 分页 -->
-  {pboot:if({page:rows}>0)}
-  <nav aria-label="page navigation" class="my-4">
-    <div class="pagination justify-content-center">
-      <a class="page-item page-link" href="{page:index}">Home</a>
-      <a class="page-item page-link" href="{page:pre}">Prev</a>
-      {page:numbar}<!-- 数字条，小屏幕时自动隐藏-->
-      <a class="page-item page-link" href="{page:next}">Next</a>
-      <a class="page-item page-link" href="{page:last}">End</a>
-    </div>
-  </nav>
-  {/pboot:if}
-
   <!-- 留言表单 -->
   <div class="row">
     <div class="col-lg-3"></div>
