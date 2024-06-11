@@ -6,7 +6,7 @@
 .service-wrap .accordion .card {
   border: none;
 }
-.service-wrap .accordion .card .card-header {
+.service-wrap > .accordion > .card > .card-header {
   border: none;
   margin: 0;
 }
