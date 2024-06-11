@@ -3,14 +3,14 @@
     object-fit: cover;
 }
 
-.service-wrap .accordion .card {
+.pages .accordion .card {
   border: none;
 }
-.service-wrap > .accordion > .card > .card-header {
+.pages > .accordion > .card > .card-header {
   border: none;
   margin: 0;
 }
-.service-wrap .accordion .card .card-header{
+.pages .accordion .card .card-header{
   border: none;
   margin: 0;
 }
