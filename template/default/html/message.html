@@ -7,71 +7,72 @@
   {pboot:if({page:rows}>0)}
   <h5 class="border-bottom border-info pb-2"><i class="fa fa-sliders" aria-hidden="true"></i> Message Record</h5>
   {/pboot:if}
-  <!-- 留言表单 -->
-  <div class="row">
-    <div class="col-6">
-      <h1>Contact us</h1>
-      <p></p>
-      <h3>Our Headquarter</h3>
-      <p></p>
-      <p>{pboot:companyaddress}</p>
-      <p>{pboot:companypostcode}</p>
-      <p></p>
-      <p>{pboot:companyphone}</p>
-      <p>{pboot:companyemail}</p>
-      <p>{pboot:companycontact}</p>
-      <p>Director Manager</p>
-      <p></p>
-      <h1>We run for you</h1>
-    </div>
-    <div class="col-6">
-      <h1>Get in contact easily . . .</h1>
-      <p>Would you like to ask us a question, are you looking for a contact person or do you need help with a problem?
-        Then simply fill in our contact form. We will get in touch with you as soon as possible.</p>
-      <form class="my-4" onsubmit="return submsg(this);">
-        <div class="form-group">
-          <div>
-            <input type="text" name="contacts" required id="contacts" class="form-control"
-              placeholder="Please enter the contact person">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div>
-            <input type="text" name="mobile" required id="mobile" class="form-control"
-              placeholder="Please enter your phone number">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div>
-            <textarea name="content" id="content" class="form-control"
-              placeholder="Please enter the message content"></textarea>
-          </div>
-        </div>
-
-        {pboot:if({pboot:msgcodestatus})}
-        <div class="form-group">
-          <div class="row">
-            <div class="col-6">
-              <input type="text" name="checkcode" required id="checkcode" class="form-control"
-                placeholder="Please enter the verification code">
-            </div>
-            <div class="col-6">
-              <img title="Click to refresh" class="codeimg" style="height:33px;" src="{pboot:checkcode}"
-                onclick="this.src='{pboot:checkcode}?'+Math.round(Math.random()*10);" />
+  <div class="message">
+    <!-- 留言表单 -->
+    <div class="row">
+      <div class="col-6">
+        <h1>Contact us</h1>
+        <p></p>
+        <h3>Our Headquarter</h3>
+        <p></p>
+        <p>{pboot:companyaddress}</p>
+        <p>{pboot:companypostcode}</p>
+        <p></p>
+        <p>{pboot:companyphone}</p>
+        <p>{pboot:companyemail}</p>
+        <p>{pboot:companycontact}</p>
+        <p>Director Manager</p>
+        <p></p>
+        <h1>We run for you</h1>
+      </div>
+      <div class="col-6">
+        <h1>Get in contact easily . . .</h1>
+        <p>Would you like to ask us a question, are you looking for a contact person or do you need help with a problem?
+          Then simply fill in our contact form. We will get in touch with you as soon as possible.</p>
+        <form class="my-4" onsubmit="return submsg(this);">
+          <div class="form-group">
+            <div>
+              <input type="text" name="contacts" required id="contacts" class="form-control"
+                placeholder="Please enter the contact person">
             </div>
           </div>
-        </div>
-        {/pboot:if}
 
-        <div class="form-group">
-          <button type="submit" class="btn btn-info mb-2">Submit message</button>
-        </div>
-      </form>
+          <div class="form-group">
+            <div>
+              <input type="text" name="mobile" required id="mobile" class="form-control"
+                placeholder="Please enter your phone number">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div>
+              <textarea name="content" id="content" class="form-control"
+                placeholder="Please enter the message content"></textarea>
+            </div>
+          </div>
+
+          {pboot:if({pboot:msgcodestatus})}
+          <div class="form-group">
+            <div class="row">
+              <div class="col-6">
+                <input type="text" name="checkcode" required id="checkcode" class="form-control"
+                  placeholder="Please enter the verification code">
+              </div>
+              <div class="col-6">
+                <img title="Click to refresh" class="codeimg" style="height:33px;" src="{pboot:checkcode}"
+                  onclick="this.src='{pboot:checkcode}?'+Math.round(Math.random()*10);" />
+              </div>
+            </div>
+          </div>
+          {/pboot:if}
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-info mb-2">Submit message</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-
 </div>
 
 
