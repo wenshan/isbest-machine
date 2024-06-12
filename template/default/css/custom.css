@@ -20,6 +20,10 @@
 .pages .accordion .card .card-header h2 {
   padding:0;
   position: relative;
+  color: #065784;
+}
+.pages .accordion .card .card-header h2.collapsed {
+  color: #21a5e0;
 }
 .pages .accordion .card .card-header h2 i {
   display: inline-block;
@@ -27,7 +31,7 @@
   height: 28px;
   background: #fff url(../images/jian.png) no-repeat right center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 80%;
   vertical-align: middle;
   margin-right: 10px;
 }
@@ -37,7 +41,7 @@
   height: 28px;
   background: #fff url(../images/jia.png) no-repeat right center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 80%;
   vertical-align: middle;
   margin-right: 10px;
 }
