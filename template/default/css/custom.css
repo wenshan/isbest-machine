@@ -47,6 +47,10 @@
   vertical-align: middle;
   margin-right: 10px;
 }
+.pages .service-wrap .heard {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .pages .service-wrap .heard h1{
   color: #065784;
   font-family: "Roboto", Sans-serif;
@@ -66,15 +70,21 @@
 .pages .row .text h3 {
   color: #21a5e0;
   font-family: "Roboto", Sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
 }
-.pages .row  .text-des .container {
+.pages .row .text-des .container {
   text-align: justify;
   font-family: "Roboto", Sans-serif;
   font-size: 16px;
   font-weight: 400;
   padding: 0;
   margin: 0;
+}
+.pages .row .text-des .container p {
+  padding-bottom: 10px;
+}
+.pages .row.g-2 .text h3 {
+  color: #065784;
 }
