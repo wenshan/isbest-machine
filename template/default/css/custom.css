@@ -94,3 +94,20 @@ div.message {
   background-image: linear-gradient(270deg, #009dd9 0%, #065784 82%);
   color: #fff;
 }
+
+div.message  .row {
+  padding-top: 50px;
+}
+div.message  .row h1 {
+  font-family: "Roboto", Sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+div.message  .row h3 {
+  font-family: "Roboto", Sans-serif;
+  font-size: 27px;
+  font-weight: 400;
+}
+div.message  .row p {
+  font-size: 24px;
+}
