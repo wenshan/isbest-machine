@@ -127,3 +127,10 @@ div.message  .row p {
   display: inline-flex;
   width: 60px;
 }
+.media ul li svg {
+  fill: #fff;
+}
+
+.media ul li svg:hover {
+  fill: #f4f4f4;
+}
