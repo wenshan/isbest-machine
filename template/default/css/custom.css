@@ -54,10 +54,25 @@
   font-weight: 500;
   line-height: 5px;
   letter-spacing: 1.7px;
+  text-align: center;
 }
 .pages .service-wrap .heard h5{
   color: #21a5e0;
   font-family: "Roboto", Sans-serif;
   font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+.pages .row .text h3 {
+  color: #21a5e0;
+  font-family: "Roboto", Sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+.pages .row  .text-des .container {
+  text-align: justify;
+  font-family: "Roboto", Sans-serif;
+  font-size: 16px;
   font-weight: 400;
 }
