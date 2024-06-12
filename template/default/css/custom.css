@@ -23,17 +23,21 @@
 }
 .pages .accordion .card .card-header h2 i {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: 28px;
+  height: 28px;
   background: #fff url(../images/jian.png) no-repeat right center;
   background-repeat: no-repeat;
   background-size: 100%;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 .pages .accordion .card .card-header h2.collapsed i{
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: 28px;
+  height: 28px;
   background: #fff url(../images/jia.png) no-repeat right center;
   background-repeat: no-repeat;
   background-size: 100%;
+  vertical-align: middle;
+  margin-right: 10px;
 }
