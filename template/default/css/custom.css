@@ -134,6 +134,10 @@ div.message  .row p {
 .media ul li svg:hover {
   fill: #f4f4f4;
 }
+
+div.footer {
+  color: #fff;
+}
 .footer .home h1 {
   color: #fff;
   font-family: "Roboto", Sans-serif;
@@ -169,6 +173,7 @@ div.message  .row p {
   width: 165px;
   margin: 0 auto;
   color: #fff;
+  text-align: center;
 }
 .footer .home .action a:hover {
   color: #065784;
