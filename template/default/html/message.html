@@ -1,13 +1,8 @@
 ﻿{include file=comm/head.html}
 
 {include file=comm/top.html}
-<div class="container pages">
-  {include file=comm/position.html}
-
-  {pboot:if({page:rows}>0)}
-  <h5 class="border-bottom border-info pb-2"><i class="fa fa-sliders" aria-hidden="true"></i> Message Record</h5>
-  {/pboot:if}
-  <div class="message">
+<div class="container pages message">
+  <div>
     <!-- 留言表单 -->
     <div class="row">
       <div class="col-6">
