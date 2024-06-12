@@ -4,6 +4,7 @@
 }
 .pages .accordion .card {
   border: none;
+  margin: 0;
 }
 .pages > .accordion > .card > .card-header {
   border: none;
@@ -20,10 +21,10 @@
 .pages .accordion .card .card-header h2 {
   padding:0;
   position: relative;
-  color: #065784;
+  color: #21a5e0;
 }
 .pages .accordion .card .card-header h2.collapsed {
-  color: #21a5e0;
+  color: #065784;
 }
 .pages .accordion .card .card-header h2 i {
   display: inline-block;
