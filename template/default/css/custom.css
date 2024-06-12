@@ -134,3 +134,35 @@ div.message  .row p {
 .media ul li svg:hover {
   fill: #f4f4f4;
 }
+.footer .home h1 {
+  color: #fff;
+  font-family: "Roboto", Sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+.footer .home  h2 {
+  color: #fff;
+  font-family: "Roboto", Sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+.footer .home .action {
+  display: flex;
+}
+.footer .home .action a {
+  display: inline-flex;
+  font-family: "Roboto", Sans-serif;
+  font-weight: 500;
+  background-color: #55B36200;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 100px;
+  padding: 10px;
+}
+.footer .home .action a:hover {
+  color: #065784;
+  background-color: #fff;
+  border-color: #fff;
+}

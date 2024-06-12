@@ -1,0 +1,101 @@
+<div class="footer pt-5 border-top text-secondary bg-blue">
+  <div class="container">
+    <div class="home pb-5">
+      <h1>Start Your Dream Project Solution Now!</h1>
+      <h2>We Provide You Complete Turnkey Solution</h2>
+      <div class="action">
+        <a href="/?contact/">Start Now</a>
+        <a href="/?contact/">Contact Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright border-top lh-3 text-center  d-none d-md-block">
+    {pboot:sitecopyright}
+  </div>
+</div>
+
+<!-- 占位 -->
+<div style="height:49px;" class="d-block d-sm-none"></div>
+
+<!-- 手机底部导航 -->
+<div class="container-fluid bg-info fixed-bottom d-block d-sm-none">
+  <div class="row">
+    <div class="col-4 p-0 text-center border-right">
+      <a href="tel:{pboot:companymobile}" class="text-light d-block pt-3 pb-3"><i class="fa fa-phone"
+          aria-hidden="true"></i> Call phone</a>
+    </div>
+    <div class="col-4 p-0 text-center">
+      {pboot:sort scode=1}
+      <a href="[sort:link]" class="text-light d-block pt-3 pb-3"><i class="fa fa-location-arrow" aria-hidden="true"></i>
+        [sort:name]</a>
+      {/pboot:sort}
+    </div>
+  </div>
+</div>
+
+<!-- 在线客服 -->
+<div class="online d-none d-md-block">
+  <dl>
+    <dt style="width:200px;">
+      <h3><i class="fa fa-weixin" aria-hidden="true"></i>WeChat QR Code<span class="remove"><i
+            class="fa fa-remove"></i></span>
+      </h3>
+      <p><img src="{pboot:companyweixin} " width="100%"></p>
+    </dt>
+    <dd><i class="fa fa-weixin" aria-hidden="true"></i></dd>
+    <dd>Wechat</dd>
+  </dl>
+
+  <dl class="scroll-top">
+    <dd><i class="fa fa-chevron-up"></i></dd>
+    <dd>Back to top</dd>
+  </dl>
+</div>
+
+<script src="{pboot:sitetplpath}/js/popper.min.js"></script>
+<script src="{pboot:sitetplpath}/bootstrap/js/bootstrap.min.js"></script>
+<script src="{pboot:sitetplpath}/js/wow.min.js"></script>
+<script src="{pboot:sitetplpath}/js/aoyun.js?v=v1.2.2"></script>
+{if(USE_POLYFILL==1)}
+<script src='https://cdn.polyfill.io/v3/polyfill.min.js?features=default'></script>
+{/if}
+<script>
+  //ajax提交表单
+  function subform(obj) {
+    var url = '{pboot:form fcode=2}';
+    var tel = $(obj).find("#tel").val();
+
+    var reg = /^(1|0)[\d\-]+$/;
+    if (!reg.test(tel)) {
+      alert('Wrong phone number!');
+      return false;
+    }
+
+    $.ajax({
+      type: 'POST',
+      url: url,
+      dataType: 'json',
+      data: {
+        tel: tel
+      },
+      success: function (response, status) {
+        if (response.code) {
+          alert("Your call has been received and we will contact you as soon as possible!");
+          $(obj)[0].reset();
+        } else {
+          alert(response.data);
+        }
+      },
+      error: function (xhr, status, error) {
+        alert('The returned data is abnormal!');
+      }
+    });
+    return false;
+  }
+</script>
+
+{pboot:sitestatistical}
+
+</body>
+
+</html>
