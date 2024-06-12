@@ -6776,6 +6776,11 @@ button.bg-dark:focus {
   background-color: #fff !important;
 }
 
+.bg-blue {
+  background-color: #065784 !important;
+  color: #fff !important;
+}
+
 .bg-transparent {
   background-color: transparent !important;
 }
