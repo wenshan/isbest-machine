@@ -186,7 +186,8 @@ div.footer {
   background-color: #fff;
   border-color: #fff;
 }
-.footer .copyright.home {
+.footer .copyright {
   color: #fff;
   overflow: hidden;
+  height: 40px;
 }
