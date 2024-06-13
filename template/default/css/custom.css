@@ -199,12 +199,13 @@ div.footer {
     -webkit-background-clip: text;
     display: inline-block;
     padding: 0;
+    margin: 0;
     -webkit-text-fill-color: #00000000;
     color: #065784;
     font-family: "Roboto", Sans-serif;
     font-size: 37px;
     font-weight: 300;
-    line-height: 1;
+    line-height: 50px;
   }
   p {
     display: block;
@@ -311,15 +312,63 @@ div.footer {
   }
 }
 .servolines-beyond {
-  .hearder {
+  h1 {
+    background-image: linear-gradient(to right, #8849c1, #065784, #21a5e0, #27cce6);
+    -webkit-background-clip: text;
+    display: inline-block;
     padding: 0;
+    margin: 0;
+    -webkit-text-fill-color: #00000000;
+    color: #065784;
+    font-family: "Roboto", Sans-serif;
+    font-size: 37px;
+    font-weight: 300;
+    line-height: 50px;
+  }
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-size: 16px !important;
+    span {
+      font-weight: 700 !important;
+    }
+  }
+  .hearder {
+    padding: 100px 0 50px 0;
     margin: 0;
     ul{
       padding: 0;
       margin: 0;
+      display: flex;
       li {
         width: 30%;
       }
     }
+    img {
+      max-width: 165px;
+    }
+  }
+  .des {
+    h2 {
+      color: #065784;
+      font-family: "Roboto", Sans-serif;
+      font-size: 33px;
+      font-weight: 300;
+    }
+    p {
+      img {
+        max-width: 520px;
+      }
+    }
+  }
+  h3 {
+    color: #065784;
+    font-family: "Roboto", Sans-serif;
+    font-size: 19px;
+    font-weight: 500;
   }
 }
