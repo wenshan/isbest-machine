@@ -372,3 +372,12 @@ div.footer {
     font-weight: 500;
   }
 }
+.our-partners {
+  h1 {
+    color: #065784;
+    font-family: "Roboto", Sans-serif;
+    font-size: 37px;
+    font-weight: 300;
+    text-align: center;
+  }
+}
