@@ -393,6 +393,22 @@ div.footer {
   p {
     text-align: center;
   }
+  .slider {
+    position: relative;
+    overflow: hidden;
+    height: 300px; /* 设置你的图片高度 */
+  }
+   
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 300px; /* 和上面的高度一致 */
+  }
+   
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
 }
 .new-filling-machine {
   h1 {
