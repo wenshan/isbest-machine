@@ -311,5 +311,15 @@ div.footer {
   }
 }
 .servolines-beyond {
-  
+  .hearder {
+    padding: 0;
+    margin: 0;
+    ul{
+      padding: 0;
+      margin: 0;
+      li {
+        width: 30%;
+      }
+    }
+  }
 }
