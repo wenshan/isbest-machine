@@ -191,3 +191,30 @@ div.footer {
   overflow: hidden;
   height: 40px;
 }
+
+.servolines {
+  h1 {
+    background-image: linear-gradient(to right, #8849c1, #065784, #21a5e0, #27cce6);
+    -webkit-background-clip: text;
+    display: inline-block;
+    padding: 0;
+    -webkit-text-fill-color: #00000000;
+    color: #065784;
+    font-family: "Roboto", Sans-serif;
+    font-size: 37px;
+    font-weight: 300;
+    line-height: 1;
+  }
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-size: 16px;
+    span {
+      font-weight: 500;
+    }
+  }
+}
