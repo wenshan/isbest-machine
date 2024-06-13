@@ -205,7 +205,7 @@ div.footer {
     font-family: "Roboto", Sans-serif;
     font-size: 37px;
     font-weight: 300;
-    line-height: 50px;
+    line-height: 1;
   }
   p {
     display: block;
@@ -323,7 +323,7 @@ div.footer {
     font-family: "Roboto", Sans-serif;
     font-size: 37px;
     font-weight: 300;
-    line-height: 50px;
+    line-height: 1;
   }
   p {
     display: block;
@@ -373,11 +373,30 @@ div.footer {
   }
 }
 .our-partners {
+  background-color: #f0f6f6 !important;
   h1 {
     color: #065784;
     font-family: "Roboto", Sans-serif;
     font-size: 37px;
     font-weight: 300;
     text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}
+.new-filling-machine {
+  h1 {
+    background-image: linear-gradient(to right, #8849c1, #065784, #21a5e0, #27cce6);
+    -webkit-background-clip: text;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    -webkit-text-fill-color: #00000000;
+    color: #065784;
+    font-family: "Roboto", Sans-serif;
+    font-size: 37px;
+    font-weight: 300;
+    line-height: 1;
   }
 }
