@@ -25,72 +25,308 @@
   <div class="swiper-button-next d-none d-md-block"></div><!--右箭头-->
   <div class="swiper-pagination"></div>
 </div>
-
-<!--产品推荐-->
-<div class="bg-white py-5">
+<!--Start Your Turnkey Solutions-->
+<div class="bg-white py-5 servolines">
   <div class="container">
-
-    {pboot:sort scode=5}
-    <div class="text-center fs-26 fs-sm-28 text-success wow fadeInDown">[sort:name]</div>
-    <div class="text-center fs-14 fs-sm-16 mb-4 text-secondary wow fadeInUp" data-wow-delay="1s">- [sort:subname] -
-    </div>
-    {/pboot:sort}
-
     <div class="row">
-      {pboot:list scode=5 num=4 order=date}
-      <div class="col-12 col-sm-6 col-lg-3 wow zoomIn" data-wow-delay="[list:i]00ms" data-wow-duration="1s">
-        <div class="card">
-          <div class="card-img-150"><a href="[list:link]"><img class="card-img-top" src="[list:ico]"
-                alt="[list:title]"></a></div>
-          <div class="card-body">
-            <h5 class="card-title"><a href="[list:link]">[list:title lencn=12]</a></h5>
-            <p class="card-text">
-              {pboot:if([list:istop]==1)}
-              <span class="badge badge-danger">置顶</span>
-              {/pboot:if}
-              {pboot:if([list:isrecommend]==1)}
-              <span class="badge badge-warning">推荐</span>
-              {/pboot:if}
-              {pboot:if([list:isheadline]==1)}
-              <span class="badge badge-info">头条</span>
-              {/pboot:if}
-              [list:content drophtml=1 dropblank=1 len=50]
-            </p>
-          </div>
+      <div class="col col-6">
+        <h1>Start Your Turnkey Solutions</h1>
+        <p>Provide you with turnkey projects for the complete solution from A to Z
+          From water treatment and blowing to filling, labeling, and packing, through palletizing, we have solutions
+          designed to meet any need your business may have.</p>
+        <div class="action">
+          <span>
+            <a href="/?contact/" class="start">Start Now</a>
+          </span>
+          <span>
+            <a href="/?contact/" class="contact">Contact Us</a>
+          </span>
         </div>
       </div>
-      {/pboot:list}
+      <div class="col col-6">
+        <div class="list">
+          <ul>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2023/07/home20007-600x600.webp" />
+              <p>Water</p>
+            </li>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2023/07/home20007-600x600.webp" />
+              <p>Water</p>
+            </li>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2023/07/home20007-600x600.webp" />
+              <p>Water</p>
+            </li>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2023/07/home20007-600x600.webp" />
+              <p>Water</p>
+            </li>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2023/07/home20007-600x600.webp" />
+              <p>Water</p>
+            </li>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2023/07/home20007-600x600.webp" />
+              <p>Water</p>
+            </li>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2023/07/home20007-600x600.webp" />
+              <p>Water</p>
+            </li>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2023/07/home20007-600x600.webp" />
+              <p>Water</p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    {pboot:sort scode=5}
-    <div class="text-center mt-4 wow fadeInDown" data-wow-delay="1s">
-      <h4><a href="[sort:link]" class="text-secondary fs-14 fs-sm-16">See more</a></h4>
-    </div>
-    {/pboot:sort}
   </div>
 </div>
-
-<!-- 关于我们 -->
-<div class="bg-white py-5">
+<!--Production Units-->
+<div class="bg-white py-5 production-units">
   <div class="container">
-    {pboot:sort scode=1}
-    <div class="text-center fs-26 fs-sm-28 text-info wow fadeInDown">[sort:name]</div>
-    <div class="text-center fs-14 fs-sm-16 mb-4 text-secondary wow fadeInUp" data-wow-delay="1s">- [sort:subname] -
+    <h2>Production Units</h2>
+    <p>The highest quality for each production unit. You can customize your line easily</p>
+    <div class="pic-list">
+      <ul>
+        <li>
+          <img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0019.webp" />
+        </li>
+        <li>
+          <img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0019.webp" />
+        </li>
+        <li>
+          <img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0019.webp" />
+        </li>
+        <li>
+          <img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0019.webp" />
+        </li>
+        <li>
+          <img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0019.webp" />
+        </li>
+        <li>
+          <img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0019.webp" />
+        </li>
+        <li>
+          <img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0019.webp" />
+        </li>
+        <li>
+          <img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0019.webp" />
+        </li>
+      </ul>
     </div>
-    {/pboot:sort}
-
-    {pboot:content id=1}
-    <div class="row text-secondary mb-5 px-3 lh-2 wow fadeInDown" data-wow-delay="500ms" style="text-indent:30px;">
-      [content:content drophtml=1 dropblank=1 len=442 more='']
-    </div>
-    <div class="text-center wow fadeInDown" data-wow-delay="1s">
-      <h4><a href="[content:link]" class="text-secondary fs-14 fs-sm-16">See more</a></h4>
-    </div>
-    {/pboot:content}
   </div>
 </div>
+<!--Servolines beyond tommorow-->
+<div class="bg-white py-5 servolines">
+  <div class="container">
+    <div class="row">
+      <div class="col col-6">
+        <h1>Servolines beyond tommorow</h1>
+        <div class="des">
+          <p>According to our customers and different markets, Servolines come up with three categories. Each category
+            meets
+            different customers and markets requirement. In any category, we still focus on first quality and developing
+            our
+            machines and technology.</p>
+          <p><img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0066.webp" /></p>
+        </div>
+      </div>
+      <div class="col col-6">
+        <div class="hearder">
+          <ul>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2022/08/icones2200007-600x130.webp" />
+            </li>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2022/08/icones2200005-600x130.webp" />
+            </li>
+            <li>
+              <img src="https://www.servolines.com/wp-content/uploads/2022/08/icones2200006-600x130.webp" />
+            </li>
+          </ul>
+        </div>
+        <div class="des">
+          <h2>Servolines in the field</h2>
+          <p>Our experienced team is made up of water industry, process technologists, engineers, and many other
+            specialists – who know exactly what is important to water factories all over the world. This is why the
+            Servolines team works with unfailing motivation to offer you a full-service package.</p>
+        </div>
+        <div>
+          <h3>They Trust Us</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Our Partners-->
+<div class="bg-white py-5 our-partners">
+  <h1>Our Partners</h1>
+  <div></div>
+  <div class="des">
+    <p>All our machines are made with the best and highest configuration quality.
+      Most of the parts are imported from the biggest companies’ brands in the world.</p>
+  </div>
+</div>
+<!--3-IN-1 New Filling Machine-->
+<div class="bg-white py-5 new-filling-machine">
+  <div class="container">
+    <div class="row">
+      <div class="col col-4">
+        <h1>3-IN-1 New Filling Machine</h1>
+        <p>Provide you with turnkey projects for the complete solution from <span>A</span> to <span>Z</span>
+          From water treatment and blowing to filling, labeling, and packing, through palletizing, we have solutions
+          designed to meet any need your business may have.</p>
+      </div>
+      <div class="col col-8">
+        <div class="machine-list">
+          <ul>
+            <li>
+              <img
+                src="	https://www.servolines.com/wp-content/uploads/2022/03/new22filling000037-Copy-e1648631068213.webp" />
+              <h5>SVW8-8-3</h5>
+              <p>3000BPH</p>
+            </li>
+            <li>
+              <img
+                src="	https://www.servolines.com/wp-content/uploads/2022/03/new22filling000037-Copy-e1648631068213.webp" />
+              <h5>SVW8-8-3</h5>
+              <p>3000BPH</p>
+            </li>
+            <li>
+              <img
+                src="	https://www.servolines.com/wp-content/uploads/2022/03/new22filling000037-Copy-e1648631068213.webp" />
+              <h5>SVW8-8-3</h5>
+              <p>3000BPH</p>
+            </li>
+            <li>
+              <img
+                src="	https://www.servolines.com/wp-content/uploads/2022/03/new22filling000037-Copy-e1648631068213.webp" />
+              <h5>SVW8-8-3</h5>
+              <p>3000BPH</p>
+            </li>
+            <li>
+              <img
+                src="	https://www.servolines.com/wp-content/uploads/2022/03/new22filling000037-Copy-e1648631068213.webp" />
+              <h5>SVW8-8-3</h5>
+              <p>3000BPH</p>
+            </li>
+            <li>
+              <img
+                src="	https://www.servolines.com/wp-content/uploads/2022/03/new22filling000037-Copy-e1648631068213.webp" />
+              <h5>SVW8-8-3</h5>
+              <p>3000BPH</p>
+            </li>
+            <li>
+              <img
+                src="	https://www.servolines.com/wp-content/uploads/2022/03/new22filling000037-Copy-e1648631068213.webp" />
+              <h5>SVW8-8-3</h5>
+              <p>3000BPH</p>
+            </li>
+            <li>
+              <img
+                src="	https://www.servolines.com/wp-content/uploads/2022/03/new22filling000037-Copy-e1648631068213.webp" />
+              <h5>SVW8-8-3</h5>
+              <p>3000BPH</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Reason for Choosing Us-->
+  <div class="bg-white py-5 reason">
+    <div class="container">
+      <h1>Reason for Choosing Us</h1>
+      <div class="row">
+        <div class="col">
+          <div class="img"><img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0061-300x301.webp" />
+          </div>
+          <h2>Time Saving</h2>
+          <p>Our professional team will provide you the best turnkey solution for your project</p>
+        </div>
+        <div class="col">
+          <div class="img"><img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0062-300x301.webp" />
+          </div>
+          <h2>We Care</h2>
+          <p>We provide you long-time technology supports and aftersale services.</p>
+        </div>
+        <div class="col">
+          <div class="img"><img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0063-300x301.webp" />
+          </div>
+          <h2>A2Z One Place</h2>
+          <p>All equipment you need in one place, from injection machines up to packing machines</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--产品推荐-->
+  <div class="bg-white py-5">
+    <div class="container">
 
-<!-- 新闻动态 -->
-<!-- 
+      {pboot:sort scode=5}
+      <div class="text-center fs-26 fs-sm-28 text-success wow fadeInDown">[sort:name]</div>
+      <div class="text-center fs-14 fs-sm-16 mb-4 text-secondary wow fadeInUp" data-wow-delay="1s">- [sort:subname] -
+      </div>
+      {/pboot:sort}
+
+      <div class="row">
+        {pboot:list scode=5 num=4 order=date}
+        <div class="col-12 col-sm-6 col-lg-3 wow zoomIn" data-wow-delay="[list:i]00ms" data-wow-duration="1s">
+          <div class="card">
+            <div class="card-img-150"><a href="[list:link]"><img class="card-img-top" src="[list:ico]"
+                  alt="[list:title]"></a></div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="[list:link]">[list:title lencn=12]</a></h5>
+              <p class="card-text">
+                {pboot:if([list:istop]==1)}
+                <span class="badge badge-danger">置顶</span>
+                {/pboot:if}
+                {pboot:if([list:isrecommend]==1)}
+                <span class="badge badge-warning">推荐</span>
+                {/pboot:if}
+                {pboot:if([list:isheadline]==1)}
+                <span class="badge badge-info">头条</span>
+                {/pboot:if}
+                [list:content drophtml=1 dropblank=1 len=50]
+              </p>
+            </div>
+          </div>
+        </div>
+        {/pboot:list}
+      </div>
+      {pboot:sort scode=5}
+      <div class="text-center mt-4 wow fadeInDown" data-wow-delay="1s">
+        <h4><a href="[sort:link]" class="text-secondary fs-14 fs-sm-16">See more</a></h4>
+      </div>
+      {/pboot:sort}
+    </div>
+  </div>
+
+  <!-- 关于我们 -->
+  <div class="bg-white py-5">
+    <div class="container">
+      {pboot:sort scode=1}
+      <div class="text-center fs-26 fs-sm-28 text-info wow fadeInDown">[sort:name]</div>
+      <div class="text-center fs-14 fs-sm-16 mb-4 text-secondary wow fadeInUp" data-wow-delay="1s">- [sort:subname] -
+      </div>
+      {/pboot:sort}
+
+      {pboot:content id=1}
+      <div class="row text-secondary mb-5 px-3 lh-2 wow fadeInDown" data-wow-delay="500ms" style="text-indent:30px;">
+        [content:content drophtml=1 dropblank=1 len=442 more='']
+      </div>
+      <div class="text-center wow fadeInDown" data-wow-delay="1s">
+        <h4><a href="[content:link]" class="text-secondary fs-14 fs-sm-16">See more</a></h4>
+      </div>
+      {/pboot:content}
+    </div>
+  </div>
+
+  <!-- 新闻动态 -->
+  <!-- 
 <div class="bg-white py-5">
   <div class="container">
     {pboot:sort scode=2}
@@ -122,31 +358,31 @@
 -->
 
 
-<script src="{pboot:sitetplpath}/swiper-4.3.5/js/swiper.min.js"></script>
-<script>
-  var mySwiper = new Swiper('.swiper-container', {
-    direction: 'horizontal',
-    loop: true,
-    speed: 1500,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false
-    },
+  <script src="{pboot:sitetplpath}/swiper-4.3.5/js/swiper.min.js"></script>
+  <script>
+    var mySwiper = new Swiper('.swiper-container', {
+      direction: 'horizontal',
+      loop: true,
+      speed: 1500,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false
+      },
 
 
-    // 如果需要分页器
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
+      // 如果需要分页器
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
 
-    // 如果需要前进后退按钮
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
 
-  })        
-</script>
+    })        
+  </script>
 
-{include file=comm/foot-home.html}
+  {include file=comm/foot-home.html}
