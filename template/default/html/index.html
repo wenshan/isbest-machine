@@ -165,13 +165,12 @@
 <div class="bg-white py-5 our-partners">
   <div class="container">
     <h1>Our Partners</h1>
-    <div id="slider" class="slider">
-      <div class="slide"><img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0031-300x60.webp"
-          alt="Image 1"></div>
-      <div class="slide"><img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0031-300x60.webp"
-          alt="Image 2"></div>
-      <div class="slide"><img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0031-300x60.webp"
-          alt="Image 3"></div>
+    <div id="slider" class="feature">
+      <ul class="feature-list">
+        <li><img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0031-300x60.webp"></li>
+        <li><img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0031-300x60.webp"></li>
+        <li><img src="https://www.servolines.com/wp-content/uploads/2021/12/Home0031-300x60.webp"></li>
+      </ul>
     </div>
     <div class="des">
       <p>All our machines are made with the best and highest configuration quality.</p>
@@ -397,6 +396,11 @@
     },
 
   })        
+</script>
+<script type="text/javascript">
+  $(function () {
+    $('#feature').scrollForever({ delayTime: 30 });
+  })
 </script>
 
 {include file=comm/foot-home.html}
