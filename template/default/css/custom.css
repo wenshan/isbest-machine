@@ -139,6 +139,9 @@ div.message  .row p {
 div.footer {
   color: #fff;
 }
+.footer .home {
+  overflow: hidden;
+}
 .footer .home h1 {
   color: #fff;
   font-family: "Roboto", Sans-serif;
@@ -182,4 +185,8 @@ div.footer {
   color: #065784;
   background-color: #fff;
   border-color: #fff;
+}
+.footer .home .copyright {
+  color: #fff;
+  overflow: hidden;
 }
