@@ -1,3 +1,12 @@
+p {
+  font-size: 16px;
+  display: block;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  line-height: 24px;
+  font-weight: 400;
+}
 .slideshow {
     height: 400px;
     object-fit: cover;
@@ -397,6 +406,49 @@ div.footer {
     font-family: "Roboto", Sans-serif;
     font-size: 37px;
     font-weight: 300;
+    line-height: 1.5;
+  }
+  .machine-list {
+    padding: 0;
+    margin: 0;
+    ul {
+      padding: 0;
+      margin: 0; 
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        width: 25%;
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      h5 {
+        color: #065784;
+        font-weight: 600;
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+      }
+    }
+    img {
+      max-width: 125px;
+    }
+  }
+}
+
+.reason {
+  h1 {
+    color: #065784;
+    font-family: "Roboto", Sans-serif;
+    font-size: 37px;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
     line-height: 1;
+  }
+  .row {
+    text-align: center;
+  }
+  img {
+    max-width: 150px;
   }
 }
