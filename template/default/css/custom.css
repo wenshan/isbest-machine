@@ -76,9 +76,10 @@ p {
   font-weight: 400;
   text-align: center;
 }
-.pages .row .p-4 img {
+.pages .row .p-4 .img {
   height: 90px;
   width: 80px;
+  overflow: hidden;
 }
 .pages .row .p-4 img {
   max-width: 80px;
