@@ -396,16 +396,14 @@ div.footer {
 .servolines-beyond  .feature2-list li {height: 30px; width: 83px; text-align: center; float: left; box-sizing:border-box;}
 .servolines-beyond  .feature2-list img {
   width: 83px;
-  height: 25px; /* 和上面的高度一致 */
   display: inline;
 }
 
 .servolines-beyond  .feature3 {height: 30px; overflow: hidden; margin:10px auto;}
 .servolines-beyond  .feature3-list{overflow: hidden; zoom: 1;}
-.servolines-beyond  .feature3-list li {height: 30px; width: 83px; text-align: center; float: left; box-sizing:border-box;}
+.servolines-beyond  .feature3-list li {height: 30px; width: 75px; text-align: center; float: left; box-sizing:border-box;}
 .servolines-beyond  .feature3-list img {
-  width: 80px;
-  height: 25px; /* 和上面的高度一致 */
+  width: 75px;
   display: inline;
 }
 .our-partners {
