@@ -561,3 +561,9 @@ div.footer {
   background-color: #fff;
   border-color: #fff;
 }
+.jumbotron {
+  padding: 2rem;
+  .media {
+    margin-top: 30px;
+  }
+}
