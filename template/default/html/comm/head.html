@@ -53,11 +53,11 @@
           <li class="nav-item {pboot:if(0=='{sort:scode}')}active{/pboot:if}">
             <a class="nav-link" href="{pboot:sitepath}/">Home</a>
           </li>
-          {pboot:if('[nav:scode]'==5)}
+          {pboot:sort scode=5}
           <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[nav:scode]">
             <a class="nav-link products" href=" [nav:link]">[nav:name]</a>
           </li>
-          {/pboot:if}
+          {/pboot:sort}
 
           {pboot:if('[nav:scode]'==1)}
           <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[nav:scode]">
