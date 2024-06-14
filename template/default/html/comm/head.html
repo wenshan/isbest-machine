@@ -56,20 +56,6 @@
           {pboot:if([nav:scode]==5)}
           <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[nav:scode]">
             <a class="nav-link products" href=" [nav:link]">[nav:name]</a>
-            <ul key="[nav:scode]">
-              {pboot:nav parent=[nav:scode]}
-              <li key="[2nav:scode]">
-                <a href="[2nav:link]">[2nav:name]</a>
-                <ul>
-                  {pboot:3nav parent=[3nav:scode]}
-                  <li key="[3nav:scode]">
-                    <a href="[3nav:link]">[3nav:name]</a>
-                  </li>
-                  {/pboot:3nav}
-                </ul>
-              </li>
-              {/pboot:2nav}
-            </ul>
           </li>
           {/pboot:if}
           {pboot:if([nav:scode]==1)}
