@@ -225,7 +225,7 @@ div.footer {
     font-family: "Roboto", Sans-serif;
     font-size: 37px;
     font-weight: 300;
-    line-height: 1;
+    line-height: 2;
   }
   p {
     display: block;
@@ -343,7 +343,7 @@ div.footer {
     font-family: "Roboto", Sans-serif;
     font-size: 37px;
     font-weight: 300;
-    line-height: 1;
+    line-height: 2;
   }
   p {
     display: block;
@@ -444,7 +444,7 @@ div.footer {
     font-family: "Roboto", Sans-serif;
     font-size: 37px;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 2;
   }
   .machine-list {
     padding: 0;
@@ -485,7 +485,7 @@ div.footer {
     font-weight: 300;
     padding: 0;
     margin: 0;
-    line-height: 1.5;
+    line-height: 1;
     text-align: center;
   }
   .row {
@@ -544,21 +544,16 @@ div.footer {
 .services a.contact {
   display: inline-block;
   font-family: "Roboto", Sans-serif;
-  font-weight: 400;
-  background-color: #55B36200;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 100px;
-  border-color: #fff;
-  padding: 10px;
-  width: 165px;
-  margin: 0 auto;
   color: #fff;
-  text-align: center;
+  background-color: #065784;
+  border-style: solid;
+  border-width: 0;
+  border-radius: 100px;
+  padding: 5px 30px;
 }
 .services a.contact:hover {
-  color: #065784;
-  background-color: #fff;
+  color: #fff;
+  background-color: #21a5e0;
   border-color: #fff;
 }
 .jumbotron {
@@ -567,3 +562,5 @@ div.footer {
     margin-top: 30px;
   }
 }
+
+.menu-container .nav-item 
