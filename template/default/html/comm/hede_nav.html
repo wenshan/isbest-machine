@@ -55,12 +55,7 @@
           </li>
           {pboot:nav num=10 parent=0}
           <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[nav:scode]">
-            {pboot:if('[nav:scode]'==5)}
-            <a class="nav-link pruduct" href="[nav:link]">[nav:name]</a>
-            {/pboot:if}
-            {pboot:if('[nav:scode]'==8)}
-            <a class="nav-link video" href="[nav:link]">[nav:name]</a>
-            {/pboot:if}
+            <a class="nav-link" href="[nav:link]">[nav:name]</a>
             {pboot:if('[nav:scode]'==5)}
             <ul key="[nav:scode]">
               {pboot:2nav parent=[nav:scode]}
