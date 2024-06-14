@@ -59,26 +59,26 @@
           </li>
           {/pboot:sort}
 
-          {pboot:if('[nav:scode]'==1)}
-          <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[nav:scode]">
-            <a class="nav-link products" href=" [nav:link]">[nav:name]</a>
+          {pboot:sort scode=1}
+          <li class="nav-item {pboot:if('[sort:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[sort:scode]">
+            <a class="nav-link products" href=" [sort:link]">[sort:name]</a>
           </li>
-          {/pboot:if}
-          {pboot:if('[nav:scode]'==9)}
-          <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[nav:scode]">
-            <a class="nav-link products" href=" [nav:link]">[nav:name]</a>
+          {/pboot:sort}
+          {pboot:sort scode=9}
+          <li class="nav-item {pboot:if('[sort:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[sort:scode]">
+            <a class="nav-link products" href=" [sort:link]">[sort:name]</a>
           </li>
-          {/pboot:if}
-          {pboot:if('[nav:scode]'==8)}
-          <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[nav:scode]">
-            <a class="nav-link videos" href=" [nav:link]">[nav:name]</a>
+          {/pboot:sort}
+          {pboot:sort scode=8}
+          <li class="nav-item {pboot:if('[sort:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[sort:scode]">
+            <a class="nav-link videos" href=" [sort:link]">[sort:name]</a>
           </li>
-          {/pboot:if}
-          {pboot:if('[nav:scode]'==10)}
-          <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[nav:scode]">
-            <a class="nav-link products" href=" [nav:link]">[nav:name]</a>
+          {/pboot:sort}
+          {pboot:sort scode=10}
+          <li class="nav-item {pboot:if('[sort:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[sort:scode]">
+            <a class="nav-link products" href=" [sort:link]">[sort:name]</a>
           </li>
-          {/pboot:if}
+          {/pboot:sort}
           <li class="nav-item">
             <a class="nav-link" href="#weglot_switcher">Weglot Switcher</a>
           </li>
