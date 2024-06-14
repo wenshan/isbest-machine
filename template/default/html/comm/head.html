@@ -53,12 +53,11 @@
           <li class="nav-item {pboot:if(0=='{sort:scode}')}active{/pboot:if}">
             <a class="nav-link" href="{pboot:sitepath}/">Home</a>
           </li>
-          <!-- {pboot:nav num=10 parent=0} -->
           {pboot:if([nav:scode]==5)}
           <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}" key="[nav:scode]">
             <a class="nav-link products" href=" [nav:link]">[nav:name]</a>
             <ul key="[nav:scode]">
-              {pboot:2nav parent=[nav:scode]}
+              {pboot:nav parent=[nav:scode]}
               <li key="[2nav:scode]">
                 <a href="[2nav:link]">[2nav:name]</a>
                 <ul>
@@ -93,7 +92,6 @@
             <a class="nav-link products" href=" [nav:link]">[nav:name]</a>
           </li>
           {/pboot:if}
-          <!-- {/pboot:nav} -->
           <li class="nav-item">
             <a class="nav-link" href="#weglot_switcher">Weglot Switcher</a>
           </li>
