@@ -71,13 +71,13 @@
             <a class="nav-link video" href="[nav:link]">[nav:name]</a>
             {/pboot:if}
             {pboot:if('[nav:scode]'==5)}
-            <ul key="[nav:scode]">
+            <ul key="[nav:scode]" class="layer">
               {pboot:2nav parent=[nav:scode]}
-              <li key="[2nav:scode]">
+              <li key="[2nav:scode]" class="sub">
                 <a href="[2nav:link]">[2nav:name]</a>
                 <ul>
                   {pboot:3nav parent=[2nav:scode]}
-                  <li key="[3nav:scode]">
+                  <li key="[3nav:scode]" class="tx">
                     <a href="[3nav:link]">[3nav:name]</a>
                   </li>
                   {/pboot:3nav}

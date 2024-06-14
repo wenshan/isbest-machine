@@ -563,17 +563,24 @@ div.footer {
   }
 }
 
+.menu-container .nav-item a.nav-link{
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #000 !important;
+}
 .menu-container .nav-item i.icon {
   display: inline-block;
   width: 18px;
   height: 18px;
-  border: 1px solid #8849c1;
   vertical-align: middle;
 }
 .menu-container .icon-arrow {
   background: url(../images/arrow-down.png) no-repeat center center;
+  background-size: 80%;
 }
 
 .menu-container .icon-video {
   background: url(../images/play.png) no-repeat center center;
+  background-size: 80%;
+  margin-right: 2px;
 }
